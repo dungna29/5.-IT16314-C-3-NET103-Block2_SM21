@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAI_1_0_TaoWindowFormBangCo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAI_1_1_TongQuanWindowForm", "BAI_1_1_TongQuanWindowForm\BAI_1_1_TongQuanWindowForm.csproj", "{3EF114BA-9257-4D5E-ADA8-496629981494}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAI_1_2_CRUD_TAIKHOAN", "BAI_1_2_CRUD_TAIKHOAN\BAI_1_2_CRUD_TAIKHOAN.csproj", "{CA6533EE-B8FA-4026-AF38-B0CC9367A33D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3EF114BA-9257-4D5E-ADA8-496629981494}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EF114BA-9257-4D5E-ADA8-496629981494}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EF114BA-9257-4D5E-ADA8-496629981494}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA6533EE-B8FA-4026-AF38-B0CC9367A33D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA6533EE-B8FA-4026-AF38-B0CC9367A33D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA6533EE-B8FA-4026-AF38-B0CC9367A33D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA6533EE-B8FA-4026-AF38-B0CC9367A33D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

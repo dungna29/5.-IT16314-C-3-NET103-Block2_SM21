@@ -36,22 +36,32 @@ namespace BAI_1_1_TongQuanWindowForm
             this.btn_ClickVaoDay = new System.Windows.Forms.Button();
             this.lbl_HienThi = new System.Windows.Forms.Label();
             this.Check = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.btn_Chao = new System.Windows.Forms.Button();
-            this.txt_Name = new System.Windows.Forms.TextBox();
             this.txt_pass = new System.Windows.Forms.TextBox();
+            this.txt_Name = new System.Windows.Forms.TextBox();
+            this.btn_Chao = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbo_NamSinh = new System.Windows.Forms.ComboBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dgrid_Table = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.Check.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Table)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -142,25 +152,27 @@ namespace BAI_1_1_TongQuanWindowForm
             this.Check.TabStop = false;
             this.Check.Text = "Check - chk và rdb";
             // 
-            // checkBox1
+            // radioButton2
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 33);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(75, 29);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Nam";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(26, 228);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(57, 29);
+            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Nữ";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // radioButton1
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(89, 33);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(58, 29);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Nữ";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(26, 192);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(74, 29);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Nam";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // checkedListBox1
             // 
@@ -175,27 +187,25 @@ namespace BAI_1_1_TongQuanWindowForm
             this.checkedListBox1.Size = new System.Drawing.Size(212, 108);
             this.checkedListBox1.TabIndex = 2;
             // 
-            // radioButton1
+            // checkBox2
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(26, 192);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(74, 29);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nam";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(89, 33);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(58, 29);
+            this.checkBox2.TabIndex = 1;
+            this.checkBox2.Text = "Nữ";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // checkBox1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(26, 228);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(57, 29);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nữ";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(8, 33);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(75, 29);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Nam";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -235,6 +245,21 @@ namespace BAI_1_1_TongQuanWindowForm
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Input = txt";
             // 
+            // txt_pass
+            // 
+            this.txt_pass.Location = new System.Drawing.Point(8, 70);
+            this.txt_pass.Name = "txt_pass";
+            this.txt_pass.PasswordChar = '*';
+            this.txt_pass.Size = new System.Drawing.Size(198, 31);
+            this.txt_pass.TabIndex = 3;
+            // 
+            // txt_Name
+            // 
+            this.txt_Name.Location = new System.Drawing.Point(8, 33);
+            this.txt_Name.Name = "txt_Name";
+            this.txt_Name.Size = new System.Drawing.Size(198, 31);
+            this.txt_Name.TabIndex = 2;
+            // 
             // btn_Chao
             // 
             this.btn_Chao.Location = new System.Drawing.Point(130, 107);
@@ -245,26 +270,76 @@ namespace BAI_1_1_TongQuanWindowForm
             this.btn_Chao.UseVisualStyleBackColor = true;
             this.btn_Chao.Click += new System.EventHandler(this.btn_Chao_Click);
             // 
-            // txt_Name
+            // groupBox5
             // 
-            this.txt_Name.Location = new System.Drawing.Point(8, 33);
-            this.txt_Name.Name = "txt_Name";
-            this.txt_Name.Size = new System.Drawing.Size(198, 31);
-            this.txt_Name.TabIndex = 2;
+            this.groupBox5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox5.Controls.Add(this.dateTimePicker1);
+            this.groupBox5.Location = new System.Drawing.Point(410, 293);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox5.Size = new System.Drawing.Size(307, 80);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Date Time Picker = dtp";
             // 
-            // txt_pass
+            // dateTimePicker1
             // 
-            this.txt_pass.Location = new System.Drawing.Point(8, 70);
-            this.txt_pass.Name = "txt_pass";
-            this.txt_pass.PasswordChar = '*';
-            this.txt_pass.Size = new System.Drawing.Size(198, 31);
-            this.txt_pass.TabIndex = 3;
+            this.dateTimePicker1.Location = new System.Drawing.Point(17, 40);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(249, 31);
+            this.dateTimePicker1.TabIndex = 0;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox6.Controls.Add(this.cbo_NamSinh);
+            this.groupBox6.Location = new System.Drawing.Point(410, 385);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox6.Size = new System.Drawing.Size(307, 80);
+            this.groupBox6.TabIndex = 5;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Combobox = cbo";
+            // 
+            // cbo_NamSinh
+            // 
+            this.cbo_NamSinh.FormattingEnabled = true;
+            this.cbo_NamSinh.Location = new System.Drawing.Point(67, 33);
+            this.cbo_NamSinh.Name = "cbo_NamSinh";
+            this.cbo_NamSinh.Size = new System.Drawing.Size(121, 33);
+            this.cbo_NamSinh.TabIndex = 0;
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.groupBox7.Controls.Add(this.dgrid_Table);
+            this.groupBox7.Location = new System.Drawing.Point(120, 515);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.groupBox7.Size = new System.Drawing.Size(805, 239);
+            this.groupBox7.TabIndex = 6;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Data Grid View = dgrid";
+            // 
+            // dgrid_Table
+            // 
+            this.dgrid_Table.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrid_Table.Location = new System.Drawing.Point(13, 33);
+            this.dgrid_Table.Name = "dgrid_Table";
+            this.dgrid_Table.Size = new System.Drawing.Size(784, 197);
+            this.dgrid_Table.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 715);
+            this.ClientSize = new System.Drawing.Size(982, 769);
+            this.Controls.Add(this.groupBox7);
+            this.Controls.Add(this.groupBox6);
+            this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Check);
@@ -283,6 +358,10 @@ namespace BAI_1_1_TongQuanWindowForm
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgrid_Table)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -307,6 +386,12 @@ namespace BAI_1_1_TongQuanWindowForm
         private System.Windows.Forms.Button btn_Chao;
         private System.Windows.Forms.TextBox txt_pass;
         private System.Windows.Forms.TextBox txt_Name;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox cbo_NamSinh;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.DataGridView dgrid_Table;
     }
 }
 
