@@ -37,6 +37,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.txt_Pass = new System.Windows.Forms.TextBox();
             this.txt_Acc = new System.Windows.Forms.TextBox();
             this.lbl_path = new System.Windows.Forms.Label();
+            this.btn_Opendata = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_DangKy
@@ -49,6 +50,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.lbl_DangKy.TabIndex = 27;
             this.lbl_DangKy.TabStop = true;
             this.lbl_DangKy.Text = "Đăng ký?";
+            this.lbl_DangKy.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbl_DangKy_LinkClicked);
             // 
             // lbl_QuenMatKhau
             // 
@@ -127,11 +129,24 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.lbl_path.TabIndex = 28;
             this.lbl_path.Text = "Path";
             // 
+            // btn_Opendata
+            // 
+            this.btn_Opendata.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Opendata.Location = new System.Drawing.Point(4, 268);
+            this.btn_Opendata.Margin = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.btn_Opendata.Name = "btn_Opendata";
+            this.btn_Opendata.Size = new System.Drawing.Size(93, 35);
+            this.btn_Opendata.TabIndex = 29;
+            this.btn_Opendata.Text = "Mở Data";
+            this.btn_Opendata.UseVisualStyleBackColor = true;
+            this.btn_Opendata.Click += new System.EventHandler(this.btn_Opendata_Click);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 286);
+            this.ClientSize = new System.Drawing.Size(359, 312);
+            this.Controls.Add(this.btn_Opendata);
             this.Controls.Add(this.lbl_path);
             this.Controls.Add(this.lbl_DangKy);
             this.Controls.Add(this.lbl_QuenMatKhau);
@@ -159,5 +174,6 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
         private System.Windows.Forms.TextBox txt_Pass;
         private System.Windows.Forms.TextBox txt_Acc;
         private System.Windows.Forms.Label lbl_path;
+        private System.Windows.Forms.Button btn_Opendata;
     }
 }

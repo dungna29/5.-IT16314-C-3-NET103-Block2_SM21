@@ -27,6 +27,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Services
             catch (Exception e)
             {
                 Console.WriteLine(e);
+                _fs.Close();
                 return "Ghi file thất bại";
             }
         }
@@ -45,6 +46,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Services
             }
             catch (Exception e)
             {
+                _fs.Close();
                 return null;
             }
         }

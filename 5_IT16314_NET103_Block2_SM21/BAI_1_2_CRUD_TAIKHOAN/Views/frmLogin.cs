@@ -25,10 +25,24 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             InitializeComponent();
             _iServiceAccount = new ServiceAccount();
             _iServiceFiles = new ServiceFiles();
-            OpenFileLoadData();
+            
         }
-        //Mở file dữ liệu và đọc data
-        void OpenFileLoadData()
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+            if (_lstAccounts.Any(c=>c.Acc == txt_Acc.Text && c.Pass == txt_Pass.Text))
+            {
+                frmMain frmMain = new frmMain();//Khởi tạo lớp đối tượng
+                frmMain.SenderDataFromLoginToMain(txt_Acc, _filePath);//Gọi phương thức bên main để truyền dữ liệu
+                this.Hide();//Ẩn form hiện tại đi
+                MessageBox.Show("Đăng nhập thành công", "Thông báo");
+                frmMain.Show();//Hiển thị form Main lên
+                return;
+            }
+            MessageBox.Show("Vui lòng kiểm trả lại Acc & Pass","Thông báo");
+        }
+
+        private void btn_Opendata_Click(object sender, EventArgs e)
         {
             OpenFileDialog dlg = new OpenFileDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
@@ -37,18 +51,17 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
                 lbl_path.Text = _filePath;
                 //Đọc file lên và đổ giá trị trị đọc vào List ở form này
                 _lstAccounts = _iServiceFiles.openFile<Account>(_filePath);
-                //Gán List đối tượng đã đọc của Account vào bên Service
+                //Gán List đối tượng đã đọc từ file vào bên Service
                 _iServiceAccount.fillDataToListFromFile(_lstAccounts);
             }
         }
 
-        private void btn_Login_Click(object sender, EventArgs e)
+        private void lbl_DangKy_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmMain frmMain = new frmMain();//Khởi tạo lớp đối tượng
-            frmMain.SenderDataFromLoginToMain(txt_Acc, _filePath);//Gọi phương thức bên main để truyền dữ liệu
-            this.Hide();//Ẩn form hiện tại đi
-            frmMain.Show();//Hiển thị form Main lên
-
+            this.Hide();//Ẩn form hiện tại
+            frmRegister frmRegister = new frmRegister();
+            frmRegister.SenderFilePathFromLogin(_filePath);//Truyền đường dẫn từ login sang form đăng ký thông qua tham số của phương thức
+            frmRegister.Show();
         }
     }
 }

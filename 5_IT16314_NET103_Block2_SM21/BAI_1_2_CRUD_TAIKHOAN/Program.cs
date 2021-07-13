@@ -17,7 +17,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMain());
+            Application.Run(new frmLogin());
         }
     }
 }

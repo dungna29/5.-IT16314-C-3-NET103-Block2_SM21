@@ -30,6 +30,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_TaoTaiKhoan = new System.Windows.Forms.Button();
             this.cmbNamSinh = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.rbtnNu = new System.Windows.Forms.RadioButton();
@@ -40,7 +41,6 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.label2 = new System.Windows.Forms.Label();
             this.txtAcc = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_TaoTaiKhoan = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,17 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo tài khoản";
+            // 
+            // btn_TaoTaiKhoan
+            // 
+            this.btn_TaoTaiKhoan.Location = new System.Drawing.Point(293, 218);
+            this.btn_TaoTaiKhoan.Margin = new System.Windows.Forms.Padding(6);
+            this.btn_TaoTaiKhoan.Name = "btn_TaoTaiKhoan";
+            this.btn_TaoTaiKhoan.Size = new System.Drawing.Size(155, 42);
+            this.btn_TaoTaiKhoan.TabIndex = 12;
+            this.btn_TaoTaiKhoan.Text = "Tạo tài khoản";
+            this.btn_TaoTaiKhoan.UseVisualStyleBackColor = true;
+            this.btn_TaoTaiKhoan.Click += new System.EventHandler(this.btn_TaoTaiKhoan_Click);
             // 
             // cmbNamSinh
             // 
@@ -170,16 +181,6 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.label1.TabIndex = 5;
             this.label1.Text = "Tài khoản: ";
             // 
-            // btn_TaoTaiKhoan
-            // 
-            this.btn_TaoTaiKhoan.Location = new System.Drawing.Point(293, 218);
-            this.btn_TaoTaiKhoan.Margin = new System.Windows.Forms.Padding(6);
-            this.btn_TaoTaiKhoan.Name = "btn_TaoTaiKhoan";
-            this.btn_TaoTaiKhoan.Size = new System.Drawing.Size(155, 42);
-            this.btn_TaoTaiKhoan.TabIndex = 12;
-            this.btn_TaoTaiKhoan.Text = "Tạo tài khoản";
-            this.btn_TaoTaiKhoan.UseVisualStyleBackColor = true;
-            // 
             // frmRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -187,7 +188,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.ClientSize = new System.Drawing.Size(490, 298);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "frmRegister";
             this.Text = "frmRegister";
             this.groupBox1.ResumeLayout(false);

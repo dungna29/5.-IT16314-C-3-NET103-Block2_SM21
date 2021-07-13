@@ -31,7 +31,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lưuFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Mn_LuuFile = new System.Windows.Forms.ToolStripMenuItem();
             this.đọcFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátChươngTrìnhToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,7 +80,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             // hệThốngToolStripMenuItem
             // 
             this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lưuFileToolStripMenuItem,
+            this.Mn_LuuFile,
             this.đọcFileToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem,
             this.thoátChươngTrìnhToolStripMenuItem});
@@ -88,11 +88,12 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(69, 19);
             this.hệThốngToolStripMenuItem.Text = "Hệ thống";
             // 
-            // lưuFileToolStripMenuItem
+            // Mn_LuuFile
             // 
-            this.lưuFileToolStripMenuItem.Name = "lưuFileToolStripMenuItem";
-            this.lưuFileToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.lưuFileToolStripMenuItem.Text = "Lưu File";
+            this.Mn_LuuFile.Name = "Mn_LuuFile";
+            this.Mn_LuuFile.Size = new System.Drawing.Size(181, 22);
+            this.Mn_LuuFile.Text = "Lưu File";
+            this.Mn_LuuFile.Click += new System.EventHandler(this.Mn_LuuFile_Click);
             // 
             // đọcFileToolStripMenuItem
             // 
@@ -147,6 +148,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             // 
             // dgrid_Account
             // 
+            this.dgrid_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_Account.Location = new System.Drawing.Point(13, 84);
             this.dgrid_Account.Margin = new System.Windows.Forms.Padding(6);
@@ -210,6 +212,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.btn_Add.TabIndex = 12;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // groupBox1
             // 
@@ -416,7 +419,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem lưuFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Mn_LuuFile;
         private System.Windows.Forms.ToolStripMenuItem đọcFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátChươngTrìnhToolStripMenuItem;
