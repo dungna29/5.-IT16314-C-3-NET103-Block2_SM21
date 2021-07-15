@@ -157,6 +157,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.dgrid_Account.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgrid_Account.Size = new System.Drawing.Size(1399, 362);
             this.dgrid_Account.TabIndex = 0;
+            this.dgrid_Account.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_Account_CellClick);
             // 
             // groupBox2
             // 
@@ -192,6 +193,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.btn_Xoa.TabIndex = 12;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = true;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Sua
             // 
@@ -202,6 +204,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.btn_Sua.TabIndex = 12;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
+            this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
             // 
             // btn_Add
             // 
@@ -302,6 +305,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.cbxKhongHoatDong.TabIndex = 7;
             this.cbxKhongHoatDong.Text = "Không hoạt động";
             this.cbxKhongHoatDong.UseVisualStyleBackColor = true;
+            this.cbxKhongHoatDong.CheckedChanged += new System.EventHandler(this.cbxKhongHoatDong_CheckedChanged);
             // 
             // cbxHoatDong
             // 
@@ -313,6 +317,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             this.cbxHoatDong.TabIndex = 6;
             this.cbxHoatDong.Text = "Hoạt động";
             this.cbxHoatDong.UseVisualStyleBackColor = true;
+            this.cbxHoatDong.CheckedChanged += new System.EventHandler(this.cbxHoatDong_CheckedChanged);
             // 
             // label4
             // 

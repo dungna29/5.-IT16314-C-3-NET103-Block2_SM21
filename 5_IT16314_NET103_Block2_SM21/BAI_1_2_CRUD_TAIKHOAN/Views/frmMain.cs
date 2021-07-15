@@ -21,6 +21,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
         private List<Account> _lstAccounts;
         private string _filePath;
         private Account _account;
+       
         public frmMain()
         {
             InitializeComponent();
@@ -59,11 +60,11 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             foreach (var x in _lstAccounts)//Đổ dữ liệu vào datagrid
             {
                 dgrid_Account.Rows.Add(x.Id, x.Acc, x.Pass, x.Sex == 1 ? "Nam" : "Nữ", x.YearofBirth,
-                    DateTime.Now.Year - x.YearofBirth, x.Status ? "Hoạt động": "Không Hoạt động");
+                    DateTime.Now.Year - x.YearofBirth, x.Status ? "Hoạt động" : "Không Hoạt động");
             }
         }
 
-        public void SenderDataFromLoginToMain(TextBox valueAcc,string path)
+        public void SenderDataFromLoginToMain(TextBox valueAcc, string path)
         {
             lbl_AccLogin.Text = "Chào mừng bạn: " + valueAcc.Text;
             _filePath = path;
@@ -74,7 +75,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -84,7 +85,7 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             {
                 Application.Exit();
             }
-         
+
 
         }
 
@@ -104,6 +105,62 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
         private void Mn_LuuFile_Click(object sender, EventArgs e)
         {
             MessageBox.Show(_iServiceFiles.saveFile(_filePath, _lstAccounts), "Thông báo");
+        }
+
+        private void cbxHoatDong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxHoatDong.Checked)
+            {
+                cbxKhongHoatDong.Checked = false;
+            }
+        }
+
+        private void cbxKhongHoatDong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxKhongHoatDong.Checked)
+            {
+                cbxHoatDong.Checked = false;
+            }
+        }
+
+        private void dgrid_Account_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //1. Lấy index row được bấm
+            int rowIndex = e.RowIndex;
+            if (rowIndex == _lstAccounts.Count) return;//Khi bấm vào dòng cuối của grid nằm ngoài index của List hiện tại thì sẽ ko làm gì
+            //2. Lấy ra giá trị tại cột ID
+            var idAccount = dgrid_Account.Rows[rowIndex].Cells[0].Value;
+            //3. Gọi phương thức tìm kiếm bên Service
+            _account = new Account();
+            _account = _iServiceAccount.finAccount(Convert.ToInt32(idAccount));
+            //4. Khi đối tượng đc tìm thấy thì sẽ fill data lên trên các Control
+            txtAcc.Text = _account.Acc;
+            txtPass.Text = _account.Pass;
+            rbtnNam.Checked = _account.Sex == 1 ? true : false;
+            rbtnNu.Checked = _account.Sex == 0 ? true : false;
+            cmbNamSinh.SelectedIndex = cmbNamSinh.FindString(_account.YearofBirth.ToString());
+            cbxHoatDong.Checked = _account.Status ? true : false;
+            cbxKhongHoatDong.Checked = _account.Status == false ? true : false;
+            
+        }
+
+        private void btn_Xoa_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(_iServiceAccount.removeAccount(_lstAccounts.Where(c => c.Acc == txtAcc.Text).Select(c => c.Id).FirstOrDefault()));
+            //sau khi xóa cần load data
+            LoadDataToGrid();
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            _account.Acc = txtAcc.Text;
+            _account.Pass = txtPass.Text;
+            _account.Sex = rbtnNam.Checked ? 1 : 0;
+            _account.YearofBirth = Convert.ToInt32(cmbNamSinh.SelectedItem);
+            _account.Status = cbxHoatDong.Checked;
+            MessageBox.Show(_iServiceAccount.editAccount(_account), "Thông báo");
+            //Sau khi sửa load data
+            LoadDataToGrid();
         }
     }
 }

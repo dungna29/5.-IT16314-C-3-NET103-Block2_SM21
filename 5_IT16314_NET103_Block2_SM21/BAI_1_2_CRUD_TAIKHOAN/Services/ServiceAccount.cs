@@ -25,7 +25,13 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Services
 
         public string editAccount(Account account)
         {
-            throw new NotImplementedException();
+            int index = _lstAccounts.FindIndex(c => c.Id == account.Id);
+            if (index== -1)
+            {
+                return "Không tìm thấy đối tượng";
+            }
+            _lstAccounts[index] = account;
+            return "Sửa thành công";
         }
 
         public string removeAccount(int id)
