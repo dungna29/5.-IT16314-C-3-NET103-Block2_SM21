@@ -162,5 +162,31 @@ namespace BAI_1_2_CRUD_TAIKHOAN.Views
             //Sau khi sửa load data
             LoadDataToGrid();
         }
+
+        private void txtTimKiem_KeyUp(object sender, KeyEventArgs e){
+            LoadDataToGridByAcc(txtTimKiem.Text);
+        }
+        void LoadDataToGridByAcc(string acc)
+        {
+            _lstAccounts = new List<Account>();//Khởi tạo mới List
+            _lstAccounts = _iServiceAccount.getLstAccountsByAcc(acc);//Lấy List Account
+            //Đếm số lượng thuộc tính có trong đối tượng
+            Type type = typeof(Account);
+            int slThuocTinh = type.GetProperties().Length;
+            dgrid_Account.ColumnCount = slThuocTinh + 1;//Khởi tạo số lượng cột
+            dgrid_Account.Columns[0].Name = "Id";
+            dgrid_Account.Columns[1].Name = "Tài Khoản";
+            dgrid_Account.Columns[2].Name = "Mật Khẩu";
+            dgrid_Account.Columns[3].Name = "Giới Tính";
+            dgrid_Account.Columns[4].Name = "Năm Sinh";
+            dgrid_Account.Columns[5].Name = "Tuổi";
+            dgrid_Account.Columns[6].Name = "Trạng Thái";
+            dgrid_Account.Rows.Clear();
+            foreach (var x in _lstAccounts)//Đổ dữ liệu vào datagrid
+            {
+                dgrid_Account.Rows.Add(x.Id, x.Acc, x.Pass, x.Sex == 1 ? "Nam" : "Nữ", x.YearofBirth,
+                    DateTime.Now.Year - x.YearofBirth, x.Status ? "Hoạt động" : "Không Hoạt động");
+            }
+        }
     }
 }
