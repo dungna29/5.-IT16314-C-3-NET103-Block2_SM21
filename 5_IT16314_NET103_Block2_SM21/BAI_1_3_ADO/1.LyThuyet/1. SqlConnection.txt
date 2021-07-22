@@ -1,0 +1,56 @@
+﻿ADO.NET của .NET Framework các kiến thức quan trọng
+         1. Giới thiệu:
+               - ADO.NET (ActiveX Data Object) là tập hợp các thư viện lớp qua đó cho phép ứng dụng tương tác (lấy về, cập nhật, xóa) với các nguồn dữ liệu (Như SQLServer, XML, MySQL, Oracle Database ...).
+               - DbConnection: DbConnection là lớp biểu diễn sự kết nối tới máy chủ CSDL. Từ lớp này các thư viện triển khai cụ thể cho từng loại CSDL như SQL Server có lớp triển khai (kế thừa) DbConnection là SqlConnection.
+         2. SqlConnection: là một đối tượng SqlConnection từ một chuỗi kết nối tới SQL Server. Mở kết nối với phương thức Open(). Thực hiện các truy vấn bằng cách sử dụng các lớp như SqlCommand, SqlDataAdapter, SqlDataReader .... Không còn sử dụng đến kết nối nữa thì cần đóng lại bằng phương thức Close().
+         
+         3. Chuỗi kết nối: Chuỗi kết nối (connection string) là tham số để khởi tạo ra đối tượng SqlConnection, chuỗi này chứa các thông tin cơ bản để thực hiện kết nối đến một SQL Server, các thông tin được chứa theo cặp key=value; ví dụ chuỗi "key 1=value1;key 2=value2", dưới dây tham khảo một số key                   
+               3.1 Các Key:
+                    1. Số giây cố gắng kết nối trước khi phát sinh lỗi (mặc định 15s)
+                      Connect Timeout	
+                       Timeout
+                       Connection Timeout
+                    2. Key này dùng để gán địa chỉ mạng (tên máy hoặc IP hoặc domain) của SQL Server, hoặc là tên của hiện hành đang chạy của SQL Server. Nếu muốn gán cả cổng thì sẽ thêm vào phía sau địa chỉ này ,port
+                       Data Source	
+                       Server
+                       Address
+                       Addr
+                    3. Tên của Database
+                       Initial Catalog	
+                       Database
+                    4. Password để đăng nhập
+                       Password	
+                       PWD
+                    5. Tài khoản (account) dùng để đăng nhập
+                       User ID	
+                       UID
+               Ví dụ chuỗi kết nối 1:  string sqlConnStr = @"Data Source=DUNGNA_PC2021\SQLEXPRESS;Initial Catalog=CSharp3_Dungna29;Persist Security Info=True;User ID=dungna29;Password=123";
+               Ví dụ chuỗi kết nối 2:  string sqlConnStr = @"Server=DUNGNA_PC2021\SQLEXPRESS;Initial Catalog=CSharp3_Dungna29;Persist Security Info=True;User ID=dungna29;Password=123";
+
+          4. Tạo chuỗi kết nối với SqlConnectionStringBuilder: SqlConnectionStringBuilder giúp tạo ra chuỗi kết nối, bằng cách thiết lập từng loại key ở trên, sau đó nó phát sinh chuỗi kết nối giúp bạn. Ví dụ:
+          var strBuilder = new SqlConnectionStringBuilder();
+                strBuilder["Server"] = "127.0.0.1,1433";
+                strBuilder["Database"] = "CSharp3_Dungna29";
+                strBuilder["User Id"] = "dungna29";
+                strBuilder["Password"] = "123";
+
+                string sqlConnectStr = strBuilder.ToString();
+               var connection = new SqlConnection(sqlConnectStr);
+
+          5. Thông tin kết nối SqlConnection
+                1. Kiểu ConnectionState trạng thái kết nối State:
+                    ConnectionState.Closed kết nối đã đóng
+                    ConnectionState.Connecting đang kết nối
+                    ConnectionState.Executing đang thi hành lệnh nào đó
+                    ConnectionState.Fetching đang nhận dữ liệu về
+                    ConnectionState.Open kết nối đang mở
+                2. Database: Trả về tên Database - sau khi kết nối mở
+                3. StatisticsEnabled: Mặc định là false, nếu thiết lập bằng true thì nó cho phép thu thập thông tin về kết nối. Để lấy thông tin thù thập được dùng phương thức RetrieveStatistics()
+                4. Open(): 	Mở kết nối, sử dụng OpenAsync() nếu dùng kỹ thuật async
+                5. Close(): Đóng kết nối
+                6. CreateCommand(): Tạo đối tượng SqlCommand để thực hiện các lệnh SQL
+                7. CreateCommand(): Tạo đối tượng SqlCommand để thực hiện các lệnh SQL
+                8. RetrieveStatistics(): Lấy thông tin thống kê (trả về IDictionary)
+                9. Event - phát sinh khi thay đổi trạng thái kết nối, muốn bắt sự kiện gán nó bằng delegate dạng (object sender, StateChangeEventArgs e) => { /.. }
+
+           6. Đọc thông tin kết nối từ file config với Json tự tìm hiểu thêm khi học đến C#4

@@ -1,0 +1,18 @@
+﻿SqlCommand truy vấn và cập nhật dữ liệu C# SQL Server
+Tạo đối tượng SqlCommand trong C# để truy vấn và cập nhật tới CSDL SQL Server, thực hiện lệnh với các phương thức ExecuteNonQuery, ExecuteScalar, ExecuteReader
+	1. SqlCommand là gì? Lớp SqlCommand triển khai từ DbCommand cho phép tạo ra đối tượng mà từ đó có thể thi hành các lệnh SQL tương tác với MS SQL Server như các mệnh đề UPDATE|INSERT|CREATE TABLE|SELECT ... cũng như cho phép thi hành các hàm, các stored procedure của Database.
+	
+	2. Các thực thi trong SqlCommand
+		- ExecuteNonQuery() thi hành truy vấn - không cần trả về dữ liệu gì, phù hợp thực hiện các truy vấn như Update, Delete ...
+		- ExecuteReader() thi hành lệnh - trả về đối tượng giao diện IDataReader như SqlDataReader, từ đó đọc được dữ liệu trả về
+		- ExecuteScalar() thì hành và trả về một giá trị duy nhất - ở hàng đầu tiên, cột đầu tiên
+
+SqlDataAdapter DataSet và DataTable 
+	1. DataSet: DataSet là một cấu trúc phức tạp, thành phần cơ bản của ADO.NET. Nó ánh xạ CSDL nguồn (SQL Database) vào thành các đối tượng trong bộ nhớ. DataSet chứa trong nó là tập hợp các đối tượng DataTable.
+	2. DataTable: DataTable là đối tượng chứa dữ liệu, nó có tên, các dòng, cột qua đó nó là ánh xạ của một bảng (Table) của CSDL.
+	3. SqlDataAdapter: DataAdapter là lớp tạo ra cầu nối giữa DataSet (các bảng) với nguồn dữ liệu (Database - Tabble) - từ đó có thể lấy dữ liệu nguồn về DataSet, dữ liệu được biên tập (insert, update, delete) trong DataSet - sau đó cập nhật trở lại nguồn.
+			- SelectCommand thuộc tính chứa đối tượng SqlCommand, nó chạy khi lấy dữ liệu bằng cách gọi phương thực Fill
+			- InsertCommand thuộc tính chứa đối tượng SqlCommand, chạy khi thực hiện thêm dữ liệu
+			- UpdateCommand thuộc tính chứa đối tượng SqlCommand, chạy khi thực hiện cập nhật
+			- DeleteCommand thuộc tính chứa đối tượng SqlCommand, chạy khi thực hiện xóa dòng dữ liệu
+			
