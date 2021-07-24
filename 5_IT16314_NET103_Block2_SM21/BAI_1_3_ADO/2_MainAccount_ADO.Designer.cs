@@ -252,6 +252,7 @@ namespace BAI_1_3_ADO
             this.btn_Add.TabIndex = 12;
             this.btn_Add.Text = "Thêm";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // groupBox3
             // 
