@@ -35,6 +35,7 @@ namespace BAI_1_0_EFCORE_DBFIRST
             // 
             // dgrid_Account
             // 
+            this.dgrid_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_Account.Location = new System.Drawing.Point(42, 178);
             this.dgrid_Account.Name = "dgrid_Account";

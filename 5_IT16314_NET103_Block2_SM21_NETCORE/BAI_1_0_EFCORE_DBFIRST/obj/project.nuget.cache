@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qB0O8NAYGO4Nr5iKfuP6Mr85BmLKo5jTiZFbVPrWCOpbctm+eOHxzPuwruIPwAQT54JTTZzmhIHvaUwHCca5lg==",
+  "dgSpecHash": "M2SU70Psvr/QdMmEluh87LvOwk7nC/FnDAvSRlfRdKyHNC9uxAIMaR1wBBioSQ0zr+2zGaTDH0kRZ0cnEFKSVg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DungnaPC\\source\\repos\\5_IT16314_NET103_Block2_SM21_NETCORE\\BAI_1_0_EFCORE_DBFIRST\\BAI_1_0_EFCORE_DBFIRST.csproj",
+  "projectFilePath": "F:\\Dungna29 Fpoly\\8. Demo\\Demo C#3\\5.-IT16314-C-3-NET103-Block2_SM21\\5_IT16314_NET103_Block2_SM21_NETCORE\\BAI_1_0_EFCORE_DBFIRST\\BAI_1_0_EFCORE_DBFIRST.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DungnaPC\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\DungnaPC\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

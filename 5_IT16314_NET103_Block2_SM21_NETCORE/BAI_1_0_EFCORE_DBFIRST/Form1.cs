@@ -15,18 +15,16 @@ namespace BAI_1_0_EFCORE_DBFIRST
     public partial class Form1 : Form
     {
         private List<AccountsAdo> _lstAccounts;
+        private AccountService _accountService;
         public Form1()
         {
             InitializeComponent();
+            _accountService = new AccountService();
             Cach1LoadData();
-
-
         }
         void Cach1LoadData()//Cách đã học từ bài tổng quan C#
         {
-            DatabaseContext dbContext = new DatabaseContext();
-            var temp = dbContext.AccountsAdos.ToList();
-            
+            var temp = _accountService.GetLstAccountsAdos();
             _lstAccounts = temp;//Lấy List Account
             //Đếm số lượng thuộc tính có trong đối tượng
             Type type = typeof(AccountsAdo);
