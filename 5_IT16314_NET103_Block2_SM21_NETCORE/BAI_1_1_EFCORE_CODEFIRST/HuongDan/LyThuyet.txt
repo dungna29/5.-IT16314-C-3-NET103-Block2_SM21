@@ -1,0 +1,18 @@
+﻿EF CODE FIRST
+1. CÀI ĐẶT:
+	+ Install-Package Microsoft.EntityFrameworkCore
+	+ Install-Package Microsoft.EntityFrameworkCore.SqlServer
+	+ Install-Package Microsoft.EntityFrameworkCore.Tools 
+2. Tạo lớp các đối tượng Model cần có trong dự án trong thư mục Models:
+	+ Các lớp đối tượng này chính là các bảng sẽ được tạo trong CSDl
+	+ Xem lại cách cấu hình trong model ở project
+3. Tạo 1 lớp DBContext trong thư mục DBContext:
+	+ Xem cấu hình ở bên trong file DBContextDungna
+4. Tiến hành tạo Database thông qua câu lệnh trong PM
+	+ add-migration <Tên phiên bản>
+	+ update-database thực thi tiến hành zen vào DB
+Lứu ý: 
+	+ Toàn bộ các project không được phép có lỗi đỏ
+	+ Copy đường dẫn nhanh ko copy từ đường dẫn bên ngoài.
+	+ Đặt tên DB mới tùy ý
+

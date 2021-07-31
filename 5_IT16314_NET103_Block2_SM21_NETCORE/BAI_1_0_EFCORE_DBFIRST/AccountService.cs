@@ -57,5 +57,7 @@ namespace BAI_1_0_EFCORE_DBFIRST
         {
             return _lstAccountsAdos.Where(c=>c.Acc.StartsWith(acc)).ToList();
         }
+
+        
     }
 }
