@@ -22,5 +22,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY
         }
         //2. Khai báo bảng
         public DbSet<Account> Accounts { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
     }
 }

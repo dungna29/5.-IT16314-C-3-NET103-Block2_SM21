@@ -20,5 +20,8 @@ namespace BAI_1_1_EFCORE_CODEFIRST.Models
         public int? Sex { get; set; }
         public int? YearofBirth { get; set; }
         public bool? Status { get; set; }
+        
+        [ForeignKey("RoleId")]//Tạo tên cột khóa phụ
+        public Role Roles { get; set; }
     }
 }

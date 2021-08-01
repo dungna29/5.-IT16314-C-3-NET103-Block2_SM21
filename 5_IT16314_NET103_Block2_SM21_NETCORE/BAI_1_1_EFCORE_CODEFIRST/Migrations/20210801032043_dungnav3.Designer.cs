@@ -4,14 +4,16 @@ using BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BAI_1_1_EFCORE_CODEFIRST.Migrations
 {
     [DbContext(typeof(DBContext_Dungna))]
-    partial class DBContext_DungnaModelSnapshot : ModelSnapshot
+    [Migration("20210801032043_dungnav3")]
+    partial class dungnav3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,9 +35,6 @@ namespace BAI_1_1_EFCORE_CODEFIRST.Migrations
                         .HasMaxLength(29)
                         .HasColumnType("nvarchar(29)");
 
-                    b.Property<Guid?>("RoleId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<int?>("Sex")
                         .HasColumnType("int");
 
@@ -45,39 +44,12 @@ namespace BAI_1_1_EFCORE_CODEFIRST.Migrations
                     b.Property<int?>("YearofBirth")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<string>("dungna")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasIndex("RoleId");
+                    b.HasKey("Id");
 
                     b.ToTable("Accounts");
-                });
-
-            modelBuilder.Entity("BAI_1_1_EFCORE_CODEFIRST.Models.Role", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Code")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Roles");
-                });
-
-            modelBuilder.Entity("BAI_1_1_EFCORE_CODEFIRST.Models.Account", b =>
-                {
-                    b.HasOne("BAI_1_1_EFCORE_CODEFIRST.Models.Role", "Roles")
-                        .WithMany()
-                        .HasForeignKey("RoleId");
-
-                    b.Navigation("Roles");
                 });
 #pragma warning restore 612, 618
         }
