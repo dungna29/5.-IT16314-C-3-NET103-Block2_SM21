@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY
 {
-    class DBContext_Dungna: DbContext//Phải kế thừa lớp DbContext
+   public class DBContext_Dungna: DbContext//Phải kế thừa lớp DbContext
     {
 
         //1. Ghi đè 1 phương thức OnConFiguring của lớp cha
@@ -23,6 +23,9 @@ namespace BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY
         //2. Khai báo bảng
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
 
     }
 }

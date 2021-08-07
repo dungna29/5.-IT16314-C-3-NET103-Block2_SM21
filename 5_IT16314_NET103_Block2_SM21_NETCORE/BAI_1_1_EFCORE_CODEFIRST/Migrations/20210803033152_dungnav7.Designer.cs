@@ -4,14 +4,16 @@ using BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BAI_1_1_EFCORE_CODEFIRST.Migrations
 {
     [DbContext(typeof(DBContext_Dungna))]
-    partial class DBContext_DungnaModelSnapshot : ModelSnapshot
+    [Migration("20210803033152_dungnav7")]
+    partial class dungnav7
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
