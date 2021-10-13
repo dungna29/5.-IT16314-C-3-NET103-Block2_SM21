@@ -50,6 +50,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.txt_TimKiemSP = new System.Windows.Forms.TextBox();
             this.dgrid_SanPham = new System.Windows.Forms.DataGridView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_TaoHD = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.cbx_ChonTkHoaDon = new System.Windows.Forms.ComboBox();
@@ -82,7 +83,6 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.cbx_LocTrangThaiHD = new System.Windows.Forms.ComboBox();
             this.txt_TimKiemHD = new System.Windows.Forms.TextBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drgrid_Acc)).BeginInit();
@@ -288,7 +288,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(394, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(698, 610);
+            this.groupBox2.Size = new System.Drawing.Size(643, 610);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tạo Hóa Đơn";
@@ -298,9 +298,9 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox7.Controls.Add(this.txt_TimKiemSP);
             this.groupBox7.Controls.Add(this.dgrid_SanPham);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox7.Location = new System.Drawing.Point(299, 19);
+            this.groupBox7.Location = new System.Drawing.Point(309, 19);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(396, 397);
+            this.groupBox7.Size = new System.Drawing.Size(331, 397);
             this.groupBox7.TabIndex = 7;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Danh sách sản phẩm";
@@ -310,17 +310,19 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.txt_TimKiemSP.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txt_TimKiemSP.Location = new System.Drawing.Point(100, 18);
             this.txt_TimKiemSP.Name = "txt_TimKiemSP";
-            this.txt_TimKiemSP.Size = new System.Drawing.Size(290, 23);
+            this.txt_TimKiemSP.Size = new System.Drawing.Size(225, 23);
             this.txt_TimKiemSP.TabIndex = 7;
             // 
             // dgrid_SanPham
             // 
+            this.dgrid_SanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_SanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_SanPham.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgrid_SanPham.Location = new System.Drawing.Point(3, 47);
             this.dgrid_SanPham.Name = "dgrid_SanPham";
             this.dgrid_SanPham.RowTemplate.Height = 25;
-            this.dgrid_SanPham.Size = new System.Drawing.Size(390, 347);
+            this.dgrid_SanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrid_SanPham.Size = new System.Drawing.Size(325, 347);
             this.dgrid_SanPham.TabIndex = 6;
             // 
             // groupBox5
@@ -342,6 +344,16 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox5.TabIndex = 5;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Thông tin HĐ";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Location = new System.Drawing.Point(149, 328);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 48);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Thanh Toán";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // btn_TaoHD
             // 
@@ -438,19 +450,21 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox6.Location = new System.Drawing.Point(3, 416);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(692, 191);
+            this.groupBox6.Size = new System.Drawing.Size(637, 191);
             this.groupBox6.TabIndex = 6;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Chi tiết hóa đơn";
             // 
             // dgrid_HoaDonChiTiet
             // 
+            this.dgrid_HoaDonChiTiet.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_HoaDonChiTiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_HoaDonChiTiet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgrid_HoaDonChiTiet.Location = new System.Drawing.Point(3, 19);
             this.dgrid_HoaDonChiTiet.Name = "dgrid_HoaDonChiTiet";
             this.dgrid_HoaDonChiTiet.RowTemplate.Height = 25;
-            this.dgrid_HoaDonChiTiet.Size = new System.Drawing.Size(686, 169);
+            this.dgrid_HoaDonChiTiet.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrid_HoaDonChiTiet.Size = new System.Drawing.Size(631, 169);
             this.dgrid_HoaDonChiTiet.TabIndex = 6;
             // 
             // groupBox3
@@ -469,9 +483,9 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox3.Controls.Add(this.rdb_HoatDongSP);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Location = new System.Drawing.Point(1092, 0);
+            this.groupBox3.Location = new System.Drawing.Point(1037, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(341, 610);
+            this.groupBox3.Size = new System.Drawing.Size(525, 610);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Tạo Sản Phẩm";
@@ -505,6 +519,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.btn_ThemSp.TabIndex = 10;
             this.btn_ThemSp.Text = "Thêm";
             this.btn_ThemSp.UseVisualStyleBackColor = true;
+            this.btn_ThemSp.Click += new System.EventHandler(this.btn_ThemSp_Click);
             // 
             // groupBox9
             // 
@@ -513,7 +528,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox9.Location = new System.Drawing.Point(3, 317);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(335, 290);
+            this.groupBox9.Size = new System.Drawing.Size(519, 290);
             this.groupBox9.TabIndex = 7;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Data Sản phẩm";
@@ -528,13 +543,16 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             // 
             // dgrid_Sp
             // 
+            this.dgrid_Sp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrid_Sp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrid_Sp.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgrid_Sp.Location = new System.Drawing.Point(3, 42);
             this.dgrid_Sp.Name = "dgrid_Sp";
             this.dgrid_Sp.RowTemplate.Height = 25;
-            this.dgrid_Sp.Size = new System.Drawing.Size(329, 245);
+            this.dgrid_Sp.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgrid_Sp.Size = new System.Drawing.Size(513, 245);
             this.dgrid_Sp.TabIndex = 8;
+            this.dgrid_Sp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_Sp_CellClick);
             // 
             // txt_SoLuongSP
             // 
@@ -633,7 +651,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox4.Location = new System.Drawing.Point(0, 610);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1433, 229);
+            this.groupBox4.Size = new System.Drawing.Size(1562, 229);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Quản lý hóa đơn";
@@ -667,29 +685,21 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             // 
             // dataGridView3
             // 
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView3.Location = new System.Drawing.Point(3, 57);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(1427, 169);
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(1556, 169);
             this.dataGridView3.TabIndex = 7;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(149, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 48);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Thanh Toán";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1433, 839);
+            this.ClientSize = new System.Drawing.Size(1562, 839);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);

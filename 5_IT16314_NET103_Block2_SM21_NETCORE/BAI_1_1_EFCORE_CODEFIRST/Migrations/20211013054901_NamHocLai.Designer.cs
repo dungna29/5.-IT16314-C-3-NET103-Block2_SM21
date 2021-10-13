@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BAI_1_1_EFCORE_CODEFIRST.Migrations
 {
     [DbContext(typeof(DBContext_Dungna))]
-    [Migration("20210803033152_dungnav7")]
-    partial class dungnav7
+    [Migration("20211013054901_NamHocLai")]
+    partial class NamHocLai
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

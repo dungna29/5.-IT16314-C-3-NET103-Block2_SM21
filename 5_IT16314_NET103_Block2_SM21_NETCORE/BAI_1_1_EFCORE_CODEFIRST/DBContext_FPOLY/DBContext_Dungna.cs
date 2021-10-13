@@ -17,7 +17,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST.DBContext_FPOLY
             if (!optionsBuilder.IsConfigured)
             {
                 //Khi cấu hình đường dẫn nếu chưa có DB thì có thể đặt tên DB ở đây
-                optionsBuilder.UseSqlServer("Data Source=DUNGNA_PC2021\\SQLEXPRESS;Initial Catalog=IT16314_EFCODEFIRST;Persist Security Info=True;User ID=dungna29;Password=123");
+                optionsBuilder.UseSqlServer("Data Source=DUNGNAPC\\SQLEXPRESS;Initial Catalog=IT16314_EFCODEFIRST;Persist Security Info=True;User ID=dungna;Password=1");
             }
         }
         //2. Khai báo bảng

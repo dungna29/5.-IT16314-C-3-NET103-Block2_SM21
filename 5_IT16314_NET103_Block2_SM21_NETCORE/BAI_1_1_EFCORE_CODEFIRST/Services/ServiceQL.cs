@@ -26,6 +26,7 @@ namespace BAI_1_1_EFCORE_CODEFIRST.Services
             _lstRoles = new List<Role>();
             GetlstAccountsFromDB();
             GetlstRolesFromDB();
+            GetlstProductsFromDB();
         }
         #region 1. Chức năng quản lý tài khoản
         public List<Role> GetlstRoles()
@@ -73,6 +74,48 @@ namespace BAI_1_1_EFCORE_CODEFIRST.Services
         {
             return _lstAccounts.Where(c => c.Acc.ToLower().StartsWith(acc)).ToList();
         }
+        #endregion
+        #region 2. Chức năng thêm sản phẩm
+        public List<Product> GetlstProduct()
+        {
+            return _lstProducts;
+        }
+        public List<Product> GetlstProduct(string name)
+        {
+            return _lstProducts.Where(c => c.Name.StartsWith(name)).ToList();
+        }
+        public void GetlstProductsFromDB()
+        {
+            _lstProducts = _dbContext.Products.ToList();
+        }
+
+        public string AddProduct(Product product)
+        {
+            _dbContext.Add(product);
+            _dbContext.SaveChanges();
+            GetlstProductsFromDB();
+            return "Thêm thành công";
+        }
+        public string UpdateProduct(Product product)
+        {
+            _dbContext.Update(product);
+            _dbContext.SaveChanges();
+            GetlstProductsFromDB();
+            return "Sửa thành công";
+        }
+        public string DeleteProduct(Guid id)
+        {
+            _dbContext.Remove(_lstProducts.FirstOrDefault(c => c.Id == id));
+            _dbContext.SaveChanges();
+            GetlstProductsFromDB();
+            return "Xóa thành công";
+        }
+        #endregion
+
+        #region 3. Chức năng bán hàng
+
+        
+
         #endregion
     }
 }

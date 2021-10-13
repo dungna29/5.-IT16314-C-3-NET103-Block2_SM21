@@ -25,6 +25,8 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             LoadGridAccount();
             LoadGioiTinh();
             rdb_HoatDong.Checked = true;
+            LoadGridProduct();
+            rdb_HoatDongSP.Checked = true;
         }
         #region 1. Chức năng quản lý tài khoản
         void LoadGioiTinh()
@@ -126,5 +128,70 @@ namespace BAI_1_1_EFCORE_CODEFIRST
             LoadGridAccount(txt_TimAcc.Text.ToLower());
         }
         #endregion
+
+        #region 2. Chức năng quản lý sản phẩm
+
+        void LoadGridProduct()
+        {
+            DataGridViewButtonColumn btnXoaGrid = new DataGridViewButtonColumn();
+            btnXoaGrid.Name = "Column_btnXoaGrid";
+            btnXoaGrid.HeaderText = "Nút xóa";
+            btnXoaGrid.UseColumnTextForButtonValue = true;
+            btnXoaGrid.Text = "Xóa";
+
+            dgrid_Sp.ColumnCount = 4;
+            dgrid_Sp.Columns[0].Name = "Tên";
+            dgrid_Sp.Columns[1].Name = "Số lượng";
+            dgrid_Sp.Columns[2].Name = "Giá";
+            dgrid_Sp.Columns[3].Name = "Trạng Thái";
+            dgrid_Sp.Columns.Add(btnXoaGrid);
+            dgrid_Sp.Rows.Clear();
+            if (_serviceQl.GetlstProduct().Count < 0) return;
+            foreach (var x in _serviceQl.GetlstProduct())
+            {
+                dgrid_Sp.Rows.Add(x.Name, x.Quantity, x.Price, x.Status == true ? "Hoạt động" : "Không hoạt động");
+            }
+        }
+        void LoadGridProduct(string name)
+        {
+            dgrid_Sp.ColumnCount = 4;
+            dgrid_Sp.Columns[0].Name = "Tên";
+            dgrid_Sp.Columns[1].Name = "Số lượng";
+            dgrid_Sp.Columns[2].Name = "Giá";
+            dgrid_Sp.Columns[3].Name = "Trạng Thái";
+            dgrid_Sp.Rows.Clear();
+            if (_serviceQl.GetlstProduct().Count < 0) return;
+            foreach (var x in _serviceQl.GetlstProduct(name))
+            {
+                dgrid_Sp.Rows.Add(x.Name, x.Quantity, x.Price, x.Status == true ? "Hoạt động" : "Không hoạt động");
+            }
+        }
+        private void btn_ThemSp_Click(object sender, EventArgs e)
+        {
+            Product product = new Product
+            {
+                Id = Guid.NewGuid(),
+                Name = txt_TenSP.Text,
+                Quantity = Convert.ToInt32(txt_SoLuongSP.Text),
+                Price = Convert.ToDouble(txt_GiaoTienSP.Text),
+                Status = rdb_HoatDongSP.Checked
+
+            };
+            MessageBox.Show(_serviceQl.AddProduct(product), "Thông báo");
+            LoadGridProduct();
+        }
+
+
+        #endregion
+
+        private void dgrid_Sp_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var rowIndex = e.RowIndex;
+            var columns = e.ColumnIndex;
+            if (e.ColumnIndex == dgrid_Sp.Columns["Column_btnXoaGrid"].Index)
+            {
+                
+            }
+        }
     }
 }

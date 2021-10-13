@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = BAI_1_1_EFCORE_CODEFIRST
+build_property.ProjectDir = E:\Dungna29 Fpoly\8. Demo\Demo C#3\5.-IT16314-C-3-NET103-Block2_SM21\5_IT16314_NET103_Block2_SM21_NETCORE\BAI_1_1_EFCORE_CODEFIRST\
